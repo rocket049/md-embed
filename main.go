@@ -74,7 +74,7 @@ func embedMarkdown(fn, outName string) (err error) {
 		for i := range m {
 			fmt.Fprintf(os.Stderr, "\n%d: %#v\n", i+1, m[i])
 			datName := genDataUrl(m[i][2])
-			fmt.Fprintf(fout, "![%s][%s]", m[i][1], datName)
+			fmt.Fprintf(fout, "![%s][%s]\n", m[i][1], datName)
 			dataUrls[datName] = genDataSection(getImagePath(fn, m[i][2]))
 		}
 	}
